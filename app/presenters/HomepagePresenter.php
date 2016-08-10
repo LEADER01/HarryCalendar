@@ -11,7 +11,7 @@ class HomepagePresenter extends BasePresenter
 
 	public function renderDefault()
 	{
-		echo Model\BackgroundTable::createTable();
+//		$this->template->backgroundTable = Model\BackgroundTable::createTable();
 	}
 
 }

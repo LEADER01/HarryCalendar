@@ -18,9 +18,10 @@
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-
-	{include content}
-
+    <div id="mainContent">
+        {include content}&nbsp;
+    </div>
+    {ifset $backgroundTable}{$backgroundTable|noescape}{/ifset}
 	{block scripts}
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//nette.github.io/resources/js/netteForms.min.js"></script>

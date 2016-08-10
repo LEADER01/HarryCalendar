@@ -1,15 +1,7 @@
-table#backgroundTable
-  position: fixed
-  width: 100%
-  height: 100%
-  td
-    border: 0.5px rgba(57, 66, 64, 0.75) dashed
-    &.red-day
-      background-color: #F06B50
-    &.black-day
-      background-color: #4B3E4D
-    &.blue-day
-      background-color: #1f8087
+//Variablos
+$DeepRed = #F06B50
+$DeepBlack = #4B3E4D
+$DeepBlue = #1f8087
 
 /* First palette */
 /* Blue - #45AAB8 */
@@ -23,3 +15,28 @@ table#backgroundTable
 /*Biege - #DBD8A2*/
 /*Yellow-ish - #C4AC30*/
 /*Red-ish - #D74F33*/
+
+
+table#backgroundTable
+  position fixed
+  width 100%
+  height 100%
+  td
+    border: 0.5px rgba(57, 66, 64, 0.75) dashed
+    &.red-day
+      background-color $DeepRed
+    &.black-day
+      background-color $DeepBlack
+    &.blue-day
+      background-color $DeepBlue
+
+div#mainContent
+  position absolute
+  z-index 999
+  opacity 0.7
+  width 600px
+  background #7F007F
+  transition .3s
+  //height 100px
+  &:hover
+    opacity 1
