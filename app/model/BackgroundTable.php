@@ -31,15 +31,17 @@ class BackgroundTable extends Nette\Object
 	 * @return string
 	 */
 	public static function createTable($type = "empty") {
+		$year = date("y"); //TODO replace with value which makes sense
 		$ret = "<table id='backgroundTable'>";
-		for ($i = 0; $i < 6; $i++) {
+		for ($i = 1; $i <= 12; $i++) {
 			$ret .= "<tr>";
-			for ($j = 0; $j < 61; $j++) {
-				$ret .= "<td>.</td>";
+			for ($j = 1; $j <= cal_days_in_month(CAL_GREGORIAN, $i, $year); $j++) {
+				$ret .= "<td style='background-color: rgba(".rand(0, 255).", ".rand(0, 255).", ".rand(0, 255).", ".(rand(5, 10) / 10).");'>&nbsp $j</td>";
 			}
 			$ret .= "</tr>";
 		}
 		$ret .= "</table>";
 		return $ret;
 	}
+
 }

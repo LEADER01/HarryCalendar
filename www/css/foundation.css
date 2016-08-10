@@ -29,6 +29,9 @@ em { font-style: italic; }
 /*mozilla 2002 bugfix*/
 img {    max-width: 100%;    height: auto;    border: 0;}
 /*image will never cause trouble to content*/
+table {    border-collapse: collapse; }
+/* Can't remember last time I didn't have to collapse borders #moderDesign2K16 */
+
 .hidden { display: none;}
 .btn {
     overflow: visible;

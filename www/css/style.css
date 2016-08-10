@@ -1,5 +1,9 @@
-
-
 table#backgroundTable {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
 
+#backgroundTable td {
+    border: 1px solid;
 }
