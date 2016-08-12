@@ -17,11 +17,11 @@ class SexyAssObject extends Nette\Object
 	 * @param $needle string key
 	 * @param $haystack array source
 	 * @param bool $null make true if value could be null
-	 * @return bool
+	 * @return bool|null
 	 */
 	protected static function setIfGet($needle, $haystack, $null = false)
 	{
-		return (isset($haystack[$needle])) ? $haystack[$needle] : ($null) ? (array_key_exists($needle, $haystack) ? $haystack[$needle] : false): false;
+		return (isset($haystack[$needle])) ? $haystack[$needle] : ($null) ? (array_key_exists($needle, $haystack) ? $haystack[$needle] : null): null;
 	}
 
 	/**
