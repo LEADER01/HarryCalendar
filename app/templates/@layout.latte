@@ -18,10 +18,15 @@
 
 <body>
 	<div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
-    <div id="mainContent">
-        {include content}&nbsp;
-    </div>
-    {ifset $backgroundTable}{$backgroundTable|noescape}{/ifset}
+    <div id="header" class="section">
+		<h1 class="c-allign">Harry Calendar</h1>
+	</div>
+	{*<div id="mainContent">*}
+	{*{include content}&nbsp;*}
+	{*</div>*}
+	<div id="previous-years" class="section">{ifset $previousYearsTable}{$previousYearsTable|noescape}{/ifset}</div>
+	<div id="current-year" class="section">{ifset $currentYearTable}{$currentYearTable|noescape}{/ifset}</div>
+	<div id="upcoming-years" class="section">{ifset $upcomingYearsTable}{$upcomingYearsTable|noescape}{/ifset}</div>
 	{block scripts}
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//nette.github.io/resources/js/netteForms.min.js"></script>

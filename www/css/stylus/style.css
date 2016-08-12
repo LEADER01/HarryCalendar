@@ -1,15 +1,14 @@
-/* First palette */
-/* Blue - #45AAB8 */
-/* Sand - #E1D772 */
-/* Biege - #FAF4B1 */
-/* Black - #394240 */
-/* Red - #F06B50 */
 /* Second palette */
-/*Deep - #4B3E4D*/
-/*Blue - #1E8C93*/
-/*Biege - #DBD8A2*/
-/*Yellow-ish - #C4AC30*/
-/*Red-ish - #D74F33*/
+#header {
+  width: 100%;
+  padding: 18px 0 28px;
+  background-color: #394240;
+}
+#header h1 {
+  color: #faf4b1;
+  align-content: center;
+  text-align: center;
+}
 table#backgroundTable {
   position: fixed;
   width: 100%;
