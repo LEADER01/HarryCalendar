@@ -32,13 +32,14 @@ private static $colors = array("red", "black", "blue");
 	 */
 	public static function createTable($type = "empty", $data = null) {
 		switch ($type) {
-			case "empty":
+			case "currentYear":
 				$year = date("y"); //TODO replace with value which makes sense
 				$ret = "<table id='backgroundTable'>";
 				for ($i = 1; $i <= 12; $i++) {
 					$ret .= "<tr>";
 					for ($j = 1; $j <= cal_days_in_month(CAL_GREGORIAN, $i, $year); $j++) {
-						$ret .= "<td class='".self::$colors[rand(0, 2)]."-day'>&nbsp</td>";
+						$color = (isset($data["random"])) ? self::$colors[rand(0, 2)] : self::$colors[1];
+						$ret .= "<td class='".$color."-day c-allign'>$j</td>";
 					}
 					$ret .= "</tr>";
 				}

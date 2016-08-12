@@ -27,16 +27,29 @@ Red-ish = #D74F33
 
 table#backgroundTable
   position fixed
+  table-layout: fixed;
   width 100%
-  height 100%
+  height 70%
   td
     border: 0.5px rgba(57, 66, 64, 0.75) dashed
-    &.red-day
-      background-color $DeepRed
-    &.black-day
-      background-color $DeepBlack
-    &.blue-day
-      background-color $DeepBlue
+    font-weight 700
+    transition: 1.0s
+    //&:hover
+    //  transition: .3s
+  &:hover
+    .black-day, .red-day, .blue-day
+      color Yellow-ish
+      transition 1.9s
+
+.red-day
+  background-color $DeepRed
+  color $DeepRed
+.black-day
+  background-color $DeepBlack
+  color $DeepBlack
+.blue-day
+  background-color $DeepBlue
+  color $DeepBlue
 
 div#mainContent
   position absolute

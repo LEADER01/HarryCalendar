@@ -11,20 +11,32 @@
 }
 table#backgroundTable {
   position: fixed;
+  table-layout: fixed;
   width: 100%;
-  height: 100%;
+  height: 70%;
 }
 table#backgroundTable td {
   border: 0.5px rgba(57,66,64,0.75) dashed;
+  font-weight: 700;
+  transition: 1s;
 }
-table#backgroundTable td.red-day {
+table#backgroundTable:hover .black-day,
+table#backgroundTable:hover .red-day,
+table#backgroundTable:hover .blue-day {
+  color: #c4ac30;
+  transition: 1.9s;
+}
+.red-day {
   background-color: #f06b50;
+  color: #f06b50;
 }
-table#backgroundTable td.black-day {
+.black-day {
   background-color: #4b3e4d;
+  color: #4b3e4d;
 }
-table#backgroundTable td.blue-day {
+.blue-day {
   background-color: #1f8087;
+  color: #1f8087;
 }
 div#mainContent {
   position: absolute;
