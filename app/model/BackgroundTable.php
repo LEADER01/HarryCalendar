@@ -8,7 +8,7 @@ use Nette;
 /**
  * Users management.
  */
-class BackgroundTable extends Nette\Object
+class BackgroundTable extends SexyAssObject
 {
 //	const
 //		TABLE_NAME = 'users',
@@ -45,10 +45,9 @@ private static $colors = array("red", "black", "blue");
 				$ret .= "</table>";
 				break;
 			case "previousYears":
-				//TODO think up some fancy ass validation for this kind of stuff
-				if (is_numeric($data) || (is_array($data) && isset($data["year"]))) {
+				if ($newData = self::is_num("year", $data)) {
 					$ret = "<table id='previousYearsTable'><tr>";
-					for ($i = $data; $i < 0+date("Y"); $i++) {
+					for ($i = $newData; $i < 0+date("Y"); $i++) {
 						$ret .= "<td>$i</td>";
 					}
 					$ret .= "</tr></table>";
