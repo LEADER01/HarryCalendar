@@ -30,13 +30,25 @@ table#backgroundTable:hover .blue-day {
   background-color: #f06b50;
   color: #f06b50;
 }
+.red-day.today-day {
+  background-color: #faf4b1;
+  color: #f06b50;
+}
 .black-day {
   background-color: #4b3e4d;
   color: #4b3e4d;
 }
+.black-day.today-day {
+  background-color: #faf4b1;
+  color: #f06b50;
+}
 .blue-day {
   background-color: #1f8087;
   color: #1f8087;
+}
+.blue-day.today-day {
+  background-color: #faf4b1;
+  color: #f06b50;
 }
 div#mainContent {
   position: absolute;

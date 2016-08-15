@@ -34,12 +34,14 @@ private static $colors = array("red", "black", "blue");
 		switch ($type) {
 			case "currentYear":
 				$year = date("y"); //TODO replace with value which makes sense
+				(isset($data["showToday"])) ? $today = array("y" => date("y"), "m" => date("m"), "d" => date("d")) : null;
 				$ret = "<table id='backgroundTable'>";
 				for ($i = 1; $i <= 12; $i++) {
 					$ret .= "<tr>";
+					$todaysMonth = (isset($today)) ? ($i == $today["m"]) ? true : null : null;
 					for ($j = 1; $j <= cal_days_in_month(CAL_GREGORIAN, $i, $year); $j++) {
 						$color = (isset($data["random"])) ? self::$colors[rand(0, 2)] : self::$colors[1];
-						$ret .= "<td class='".$color."-day c-allign'>$j</td>";
+						$ret .= "<td class='".((isset($todaysMonth)) ? ($j == $today["d"]) ? "today-day " : null : null).$color."-day c-allign'>$j</td>";
 					}
 					$ret .= "</tr>";
 				}
