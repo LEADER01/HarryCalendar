@@ -20,13 +20,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 	{
 		$this->database = $database;
 		$this->log = new Model\Log($database);
-		if ($this->getUser()->isLoggedIn()) {
-			//TODO add something like "extend my session time by two weeks
-			$this->log->add("userLogIn", array("userId" => $this->user->id));
-		}
-		else {
-
-		}
 		//TODO dont forget to remove this l8r too
 		$cache = new \Nette\Caching\Cache(new Nette\Caching\Storages\DevNullStorage());
 		$cache->clean(array($cache::ALL => TRUE));
@@ -42,8 +35,19 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 	 * @return mixed
 	 */
 	public function getTodayDayOfTheYear()
-	{		
+	{
 		return date("z")+1;
+	}
+
+	protected function startup() {
+		parent::startup();
+		if ($this->getUser()->isLoggedIn()) {
+			//TODO add something like "extend my session time by two weeks
+			$this->log->add("userLogIn", array("userId" => $this->user->id));
+		}
+		else {
+
+		}
 	}
 	
 	protected function logCheck ($event, $params) {
