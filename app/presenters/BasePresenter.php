@@ -31,7 +31,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		$this->template->currentYearTable = Model\BackgroundTable::createTable("currentYear", array("random" => true, "showToday" => true));
 //		$this->template->previousYearsTable = Model\BackgroundTable::createTable("previousYears", array("year" => "1997"));
 		$this->template->previousYearsTable = Model\BackgroundTable::createTable("previousYears", "1997");
-	}
+	}dfasdfsdagsdfgds
 
 	/**
 	 * @return mixed
