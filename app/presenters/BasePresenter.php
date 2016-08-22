@@ -48,7 +48,8 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 			//TODO add something like "extend my session time by two weeks
 			$this->log->add("userLogIn", array("userId" => $this->user->id));
 		} else {
-			//DO NOTHING for now
+			if ($this->logCheck())
+				$this->log->add("");
 		}
 	}
 
