@@ -37,7 +37,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 	 * @return mixed
 	 */
 	public function getTodayDayOfTheYear()
-	{		
+	{
 		return date("z")+1;
 	}
 
@@ -48,7 +48,6 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 			$this->log->add("userLogIn", array("userId" => $this->user->id));
 		}
 		else {
-
 		}
 	}
 
@@ -61,6 +60,7 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 			//TODO Either move whole function in Log class or remove before Production...
 			// Update #1 Got an idea, we can do something like Check log for logins from curent IP address to be able
 			// to show tutorial or hints for new users only. Alternatively we can fill in user name before user even click on form...
+			// Update #2 This proved to be useful in cases like IPcheck
 		}
 	}
 }
