@@ -31,9 +31,14 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		if ($this->getUser()->isLoggedIn()) {
 			//TODO add something like "extend my session time by two weeks
 			$this->log->add("userLogIn", array("userId" => $this->user->id));
+			$this->log->add("accessFromIP", array("ip" => $_SERVER["REMOTE_ADDR"]));
 		} else {
-			if ($this->logCheck())
-				$this->log->add("");
+			if ($this->logCheck("accessFromIP", array("ip" => $_SERVER["REMOTE_ADDR"]))) {//True if ip is new.
+				$this->template->newUser = true;
+			}
+			else {
+				$this->template->newUser = false;
+			}
 		}
 	}
 
@@ -53,12 +58,21 @@ abstract class BasePresenter extends Nette\Application\UI\Presenter
 		return date("z")+1;
 	}
 
+	/**
+	 * Checks whether this log exists.
+	 *
+	 * If log not found, add log and return true, otherwise false
+	 * @param $event
+	 * @param $params
+	 * @return bool
+	 */
 	protected function logCheck ($event, $params) {
 		if ($this->log->check($event, $params) == 0)
-			$this->log->add($event, $params);
+			return $this->log->add($event, $params); //Added
 		else {
-			echo "This action has been registered earlier";
-			die();
+			return false; //Action already was there
+//			"This action has been registered earlier";
+
 			//TODO Either move whole function in Log class or remove before Production...
 			// Update #1 Got an idea, we can do something like Check log for logins from curent IP address to be able
 			// to show tutorial or hints for new users only. Alternatively we can fill in user name before user even click on form...

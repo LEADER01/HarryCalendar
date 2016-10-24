@@ -9,6 +9,12 @@
   align-content: center;
   text-align: center;
 }
+
+#previousYearsTable {
+    width: 100%;
+    text-align: center;
+    background: #808080;
+}
 table#backgroundTable {
   position: fixed;
   table-layout: fixed;
