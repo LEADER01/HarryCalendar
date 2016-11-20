@@ -1,3 +1,4 @@
 $(function(){
-    $("body").html()
+    $("body").html();
+    $('.modal').modal('show');
 });

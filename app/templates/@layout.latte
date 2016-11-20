@@ -26,7 +26,7 @@
 	{*<div id="mainContent">*}
 	{*{include content}&nbsp;*}
 	{*</div>*}
-    {if $newUser}
+    {if isset($newUser) && $newUser}
         {*Activate help popup and prepare signup form*}
     {elseif !$user->isLoggedIn()}
         {include 'components/login.latte'}
@@ -37,8 +37,11 @@
 	{block scripts}
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="//nette.github.io/resources/js/netteForms.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+                crossorigin="anonymous"></script>
 	<script src="{$basePath}/js/main.js"></script>
-    {if $newUser}
+    {if isset($newUser) && $newUser}
         <script>alert("wa");</script>
     {/if}
 	{/block}

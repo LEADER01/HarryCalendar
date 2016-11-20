@@ -12,7 +12,7 @@ use Nette\Security\Passwords;
 class UserManager extends Nette\Object implements Nette\Security\IAuthenticator
 {
 	const
-		TABLE_NAME = 'users',
+		TABLE_NAME = 'user',
 		COLUMN_ID = 'idUser',
 		COLUMN_NAME = 'email',
 		COLUMN_PASSWORD_HASH = 'pass',
