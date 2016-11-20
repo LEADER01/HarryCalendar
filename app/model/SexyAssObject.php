@@ -13,6 +13,16 @@ use Nette;
 
 class SexyAssObject extends Nette\Object
 {
+	/** @var Nette\Database\Context */
+	protected $database; //I'm still thinking whether I want third option. TODO Settings 2v3 options?
+	protected $user;
+
+	public function __construct(Nette\Database\Context $database, Nette\Security\User $user)
+	{
+		$this->database = $database;
+		$this->user = $user;
+	}
+
 	/**
 	 * @param $needle string key
 	 * @param $haystack array source
